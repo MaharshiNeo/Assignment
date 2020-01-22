@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#p1").prepend("Everyone ");
+            });            
+        });
+        $(document).ready(function(){
+            $("#btn2").click(function(){
+                $("#ol1").prepend("<li>List item 4</li>");
+            });            
+        });
+    </script>
+</head>
+<body>
+
+    <p id="p1">Hii</p>
+    <button id="btn1">Append</button><br>
+    <ol id="ol1">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="btn2">Append</button><br>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#button1").click(function(){
+                $("#p1").hide(1000);
+            });
+        });
+        $(document).ready(function(){
+            $("#button2").click(function(){
+                $("#p2").toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <button id="button1">Click me</button>
+
+    <p id="p1">Hello World</p>
+    <button id="button2">Click me</button>
+
+    <p id="p2">Hello World</p>
+
+</body>
+</html>

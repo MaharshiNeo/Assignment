@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .q{
+            color: blue;
+            font-size: 15px;
+            
+        }
+        .w{
+            background-color: green;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h1,h2,p").removeClass("q");
+                $("div").removeClass("w");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="q">Hii everyone</h1>
+    <h2 class="q">Hello world</h2>
+    <p class="q">Good morning</p>
+    <div class="w"> Good Afternoon</div>
+    <button>Click</button>
+</body>
+</html>

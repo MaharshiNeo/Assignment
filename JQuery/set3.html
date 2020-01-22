@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#a1").attr("href", 'https://www.w3schools.com/jquery')
+            });
+            $("#btn2").click(function(){
+                $("#a2").attr({
+                    "href" : "https://www.w3schools.com/jquery/",
+                    "title" : "W3Schools jQuery Tutorial"
+                });
+            });
+            $("#btn3").click(function(){
+                $("#a3").attr("href",function(i, origText){
+                    return origText +"/jquery"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="https://www.w3schools.com" id="a1">W3Schools.com</a>
+
+    <button id="btn1">Change href Value</button><br>
+
+    <a href="https://www.w3schools.com" id="a2">W3Schools.com</a>
+
+    <button id="btn2">Change href Value and title</button><br>
+
+    <a href="https://www.w3schools.com" id="a3">W3Schools.com</a>
+
+    <button id="btn3">Change href Value</button>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+   
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                alert("Text: " + $("#p1").text());
+            });
+            $("#btn2").click(function(){
+                alert("HTML: " + $("#p1").html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1"><b>Hello world</b></p>
+    <button id="btn1">Show text</button><button id='btn2'>Show html</button>
+</body>
+</html>
