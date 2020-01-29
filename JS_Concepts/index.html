@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #parent1{
+            border: 1px solid black;
+            height: 300px;
+        }
+        #child1{
+            position: relative;
+            border: 1px solid blue;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+            width: 1150px;
+        }
+        #grandchild1{
+            position: relative;
+            border: 1px solid green;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            width: 1050px;
+        }
+        #parent2{
+            border: 1px solid black;
+            height: 300px;
+        }
+        #child2{
+            position: relative;
+            border: 1px solid blue;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+            width: 1150px;
+        }
+        #grandchild2{
+            position: relative;
+            border: 1px solid green;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            width: 1050px;
+        }
+        #parent3{
+            border: 1px solid black;
+            height: 300px;
+        }
+        #child3{
+            position: relative;
+            border: 1px solid blue;
+            height: 200px;
+            top: 50px;
+            left: 50px;
+            width: 1150px;
+        }
+        #grandchild3{
+            position: relative;
+            border: 1px solid green;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            width: 1050px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event bubbling</h2>
+    <div id="parent1">
+        <div id="child1">
+            <div id="grandchild1"></div>
+        </div>
+    </div><br><br>
+    <h2>Event bubbling prevention</h2>
+    <div id="parent2">
+        <div id="child2">
+            <div id="grandchild2"></div>
+        </div>
+    </div><br><br>
+    <h2>Event capturing</h2>
+    <div id="parent3">
+        <div id="child3">
+            <div id="grandchild3"></div>
+        </div>
+    </div>
+    
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <script src="js/events.js"></script>
+</body>
+</html>
