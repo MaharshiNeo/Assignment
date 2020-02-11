@@ -1,144 +1,145 @@
 function validate(){
     
-    var val = true
+    let val = true;
 
-    var fname = document.getElementById("fname").value;
-    var lname = document.getElementById("lname").value;
-    var phone = document.getElementById("phone").value;
-    var off_no = document.getElementById("off_no").value;
-    var email = document.getElementById("email").value.trim();
-    var reg1 = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    var pass = document.getElementById("pass").value;
-    var cpass = document.getElementById("cpass").value;
-    var reg2 = /[!"#$%&'()*+,-./:;<=>?@^_`{|}~]/;
-    var date = document.getElementById("date").value;
-    var male = document.getElementById("male").checked;
-    var female = document.getElementById("female").checked;
-    var checkbox1 = document.getElementById("checkbox_sample18");
-    var checkbox2 = document.getElementById("checkbox_sample19");
-    var checkbox3 = document.getElementById("checkbox_sample20");
-    var about = document.getElementById("about").value;
+    let form = document.forms.validate;
+    console.log(form.firstName,'form');
 
-    if(fname.trim() == ''){
-        document.getElementById('fname_err').innerHTML = "First Name Required"
-        val = false
+    let firstName = form.firstName.value.trim();
+    let lastName = form.lastName.value.trim();
+    let phone = form.phone.value.trim();
+    let officeNumber = form.officeNumber.value.trim();
+    let email = form.email.value.trim();
+    let verifyEmail = /(^[a-zA-Z])([._-]?([a-zA-Z0-9])+)*@([a-zA-Z0-9]{2,}.)+[a-zA-Z]{2,3}/;
+    let password = form.password.value.trim();
+    let confirmPassword = form.confirmPassword.value.trim();
+    let verifyPassword = /[!"#$%&'()*+,-./:;<=>?@^_`{|}~]/;
+    let birthDate = form.birthDate.value;
+    let male = form.male.checked;
+    let female = form.female.checked;
+    let interest1 = form.interest1;
+    let interest2 = form.interest2;
+    let interest3 = form.interest3;
+    let about = form.about.value.trim();
+    
+    if(firstName == ''){
+        
+        document.getElementById('firstNameError').innerHTML = "First Name Required";
+        val = false;
+    }
+    else
+    {
+        document.getElementById('firstNameError').innerHTML = "";
+    }
+
+
+    if(lastName == ''){
+        document.getElementById('lastNameError').innerHTML = "Last Name Required";
+        val = false;
     }else
     {
-        document.getElementById('fname_err').innerHTML = ""
+        document.getElementById('lastNameError').innerHTML = "";
     }
 
 
-    if(lname.trim() == ''){
-        document.getElementById('lname_err').innerHTML = "Last Name Required"
-        val = false
-    }else
-    {
-        document.getElementById('lname_err').innerHTML = ""
-    }
-
-
-    if(phone.trim() == ''){
-        document.getElementById('phone_err').innerHTML = "Phone Number required"
-        val = false
+    if(phone == ''){
+        document.getElementById('phoneError').innerHTML = "Phone Number required";
+        val = false;
     }else if(isNaN(phone)){
-        document.getElementById('phone_err').innerHTML = "Only digits are allowed"
-        val = false
-    }else if(isNaN(phone)){
-        document.getElementById('phone_err').innerHTML = "Only digits are allowed"
-        val = false
-    }
-    else if(phone.length!=10){
-        document.getElementById('phone_err').innerHTML = "Only 10 digits number allowed"
-        val = false
+        document.getElementById('phoneError').innerHTML = "Only digits are allowed";
+        val = false;
+    }else if(phone.length!=10){
+        document.getElementById('phoneError').innerHTML = "Only 10 digits number allowed";
+        val = false;
     }
     else{
-        document.getElementById('phone_err').innerHTML = ""
+        document.getElementById('phoneError').innerHTML = "";
     }
 
 
-    if(isNaN(off_no)){
-        document.getElementById('off_no_err').innerHTML = "Only digits are allowed"
-        val = false
+    if(isNaN(officeNumber)){
+        document.getElementById('officeNumberError').innerHTML = "Only digits are allowed";
+        val = false;
     }
     else{
-        document.getElementById('off_no_err').innerHTML = ""
+        document.getElementById('officeNumberError').innerHTML = "";
     }
 
 
     if(email == ''){
-        document.getElementById('email_err').innerHTML = "Email Required"
-        val = false
+        document.getElementById('emailError').innerHTML = "Email Required";
+        val = false;
     }
-    else if(reg1.test(email) == false){
-        document.getElementById('email_err').innerHTML = "Email invalid"
-        val = false
+    else if(verifyEmail.test(email) == false){
+        document.getElementById('emailError').innerHTML = "Email invalid";
+        val = false;
     }
     else{
-        document.getElementById('email_err').innerHTML = ""
+        document.getElementById('emailError').innerHTML = "";
     }
 
     
-    if(pass.length > 12 || pass.length < 8){
-        document.getElementById("pass_err").innerHTML = "Length of password should be between 8 and 12"
-        val = false
+    if(password.length > 12 || password.length < 8){
+        document.getElementById("passwordError").innerHTML = "Length of password should be between 8 and 12";
+        val = false;
     }
-    else if(reg2.test(pass)){
-        document.getElementById("pass_err").innerHTML = "Password is not valid"
-        val = false
-    }
-    else{
-        document.getElementById("pass_err").innerHTML = ""
-    }
-
-    if(cpass != pass){
-        document.getElementById("cpass_err").innerHTML = "Type same password"
-        val = false
+    else if(verifyPassword.test(password)){
+        document.getElementById("passwordError").innerHTML = "Password is not valid";
+        val = false;
     }
     else{
-        document.getElementById("cpass_err").innerHTML = ""
+        document.getElementById("passwordError").innerHTML = "";
     }
 
-
-    if(date == ''){
-        document.getElementById("date_err").innerHTML = "Enter date please"
-        val = false
+    if(confirmPassword != password){
+        document.getElementById("confirmPasswordError").innerHTML = "Type same password";
+        val = false;
     }
     else{
-        document.getElementById("date_err").innerHTML = ""
-        var today = new Date();
-        var dob = new Date(date);
-        var age = today.getFullYear() - dob.getFullYear()
-        var month = today.getMonth() - dob.getMonth()
-        age = age + (month/12)
-        document.getElementById("age").value = age
+        document.getElementById("confirmPasswordError").innerHTML = "";
+    }
+
+
+    if(birthDate == ''){
+        document.getElementById("birthDateError").innerHTML = "Enter date please";
+        val = false;
+    }
+    else{
+        document.getElementById("birthDateError").innerHTML = "";
+        let today = new Date();
+        let dob = new Date(birthDate);
+        let age = today.getFullYear() - dob.getFullYear();
+        let month = today.getMonth() - dob.getMonth();
+        age = age + (month/12);
+        document.getElementById("age").value = age;
     }
 
 
     if(!(male || female)){
-        document.getElementById("gender_err").innerHTML = "Please select gender"
-        val = false
+        document.getElementById("genderError").innerHTML = "Please select gender";
+        val = false;
     }
     else{        
-        document.getElementById("gender_err").innerHTML = ""
+        document.getElementById("genderError").innerHTML = "";
     }
 
 
-    if(!(checkbox1.checked || checkbox2.checked || checkbox3.checked)){
-        document.getElementById('interest_err').innerHTML = 'Please select atleast one interest'
-        val = false
-    }
-    else{
-        document.getElementById('interest_err').innerHTML = ""        
-    }
-
-
-    if(about.trim() == ''){
-        document.getElementById("about_err").innerHTML = "This field is required"
-        val = false
+    if(!(interest1.checked || interest2.checked || interest3.checked)){
+        document.getElementById('interestError').innerHTML = 'Please select atleast one interest';
+        val = false;
     }
     else{
-        document.getElementById("about_err").innerHTML = ""
+        document.getElementById('interestError').innerHTML = "";
     }
 
-    return val
+
+    if(about == ''){
+        document.getElementById("aboutError").innerHTML = "This field is required";
+        val = false;
+    }
+    else{
+        document.getElementById("aboutError").innerHTML = "";
+    }
+
+    return val;
 }

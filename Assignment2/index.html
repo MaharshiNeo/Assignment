@@ -118,69 +118,69 @@
 			</div>
 
 			<div class="contect_text">So we can successfully match your details with suitable people, we first need to collect some information about you. Read each question carfully and  select or place a tick in the box for each of your characteristics. Please answer as honestly as you can, otherwise you may be disappointed with your matches and they with you.</div>
-			<form onsubmit="return validate()">
+			<form onsubmit="return validate()" id="validate">
 			<div class="form_container_block">
 				<ul>
 					<li class="fileds">
 						<div class="name_fileds">
 							<label>First Name</label>
-							<input name="firstname" type="text" id="fname"/> 
-							<p id="fname_err" style="color: red;"></p>
+							<input name="firstname" type="text" id="firstName"/> 
+							<p id="firstNameError" style="color: red;"></p>
 							
 						</div>
 						<div class="name_fileds">
 							<label>Last Name</label>
-							<input name="lastname" type="text" id="lname">
-							<p id="lname_err" style="color: red;"></p> 
+							<input name="lastname" type="text" id="lastName">
+							<p id="lastNameError" style="color: red;"></p> 
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="phone_fileds">
 							<label>Phone No</label>
 							<input name="phone" type="text" id="phone"/>
-							<p id="phone_err" style="color: red;"></p> 
+							<p id="phoneError" style="color: red;"></p> 
 							
 						</div>
 						<div class="phone_fileds">
 							<label>Office No</label>
-							<input name="office" type="text" id="off_no" />
-							<p id="off_no_err" style="color: red;"></p>  
+							<input name="office" type="text" id="officeNumber" />
+							<p id="officeNumberError" style="color: red;"></p>  
 						</div>
 					</li>					
 					<li class="fileds">
 						<div class="email_fileds">
 							<label>Email</label>
 							<input name="email" type="text" id = "email" /> 
-							<p id = "email_err" style="color: red;"></p>
+							<p id = "emailError" style="color: red;"></p>
 						</div>
 						<div class="pass_fileds">
 							<label>Password</label>
-							<input name="password" type="text" id="pass" /> 
-							<p id="pass_err" style="color: red;"></p>
+							<input name="password" type="password" id="password" /> 
+							<p id="passwordError" style="color: red;"></p>
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="pass_fileds">
 							<label>Confirm Password</label>
-							<input name="password" type="text" id="cpass"/> 
-							<p id="cpass_err" style="color: red;"></p>
+							<input name="confirmPassword" type="password" id="confirmPassword"/> 
+							<p id="confirmPasswordError" style="color: red;"></p>
 						</div>
 							<div class="dob_fileds selectbox">
-								<input type = "date" name="date" id="date">
-								<p style="color: red;" id="date_err"></p>
+								<input type = "date" name="date" id="birthDate">
+								<p style="color: red;" id="birthDateError"></p>
 							</div>
 					</li>
 					<li class="fileds">
 						<div class="age_fileds">
 							<label>Age</label>
-							<input name="age" type="text" id="age"/> 
+							<input name="age" type="text" id="age" disabled/> 
 						</div>
 						<div class="gender_fileds">
 							<label>Gender</label>
 							<ul>
 								<li><input type="radio" class="radio" name="gender" id="male" value="male"/><label class="radio-label" for="male">Male</label></li>
 								<li><input type="radio" class="radio" name="gender" id="female" value="female"/><label class="radio-label" for="female">Female</label></li>
-								<p id="gender_err" style="color: red;"></p>
+								<p id="genderError" style="color: red;"></p>
 							</ul>	
 						</div>
 					</li>
@@ -188,16 +188,16 @@
 						<div class="interest_fileds">
 						<label>Interest</label>
 							<ul>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample18" /> <label class="css-label" for="checkbox_sample18">Biking</label></li>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample19" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
-								<li><input type="checkbox" class="checkbox" id="checkbox_sample20" /> <label class="css-label" for="checkbox_sample20">Playing</label></li>
+								<li><input type="checkbox" class="checkbox" id="interest1" /> <label class="css-label" for="interest1">Biking</label></li>
+								<li><input type="checkbox" class="checkbox" id="interest2" /> <label class="css-label" for="interest2">Reading</label></li>
+								<li><input type="checkbox" class="checkbox" id="interest3" /> <label class="css-label" for="interest3">Playing</label></li>
 							</ul>
-							<p id="interest_err" style="color: red;"></p>
+							<p id="interestError" style="color: red;"></p>
 						</div>
 						<div class="about_you_fileds">
 						<label>About you</label>
 						<textarea id="about"></textarea>
-						<p id="about_err" style="color: red;"></p>
+						<p id="aboutError" style="color: red;"></p>
 						</div>						
 					</li>
 				</ul>
@@ -207,6 +207,7 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</div>
 	</div>		
   </div>

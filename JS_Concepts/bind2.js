@@ -8,7 +8,7 @@ const user2 = {
 }
 
 function display(){
-    console.log(`My name is ${this.name}`);
+    console.log(`My name is ${this.name}`);  
     
 }
 
