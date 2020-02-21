@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit product</title>
+  <script>
+    function check(){
+      let checkboxes = document.getElementsByName('product');      
+      for (c of checkboxes){
+        if(c.checked){          
+          return true;          
+        }
+      }
+      alert("Select at least one");
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <form action="editProduct" method="post" onsubmit="return check()">
+    <table border=1px>
+      <th></th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Delete</th>
+      <% data.forEach(d => { %>
+        <tr>     
+          <td><input type="checkbox" onclick="document.getElementById('quantity<%=d.id%>').disabled=!this.checked;" name="product" id="checkbox<%=d.id%>" value="<%=d.id%>"></td>   
+          <td><%= d.name %></td>
+          <td><input type="number" name="quantity<%=d.id%>" id="quantity<%=d.id%>" value="<%= d.quantity %>" min="1" disabled></td>
+          <td><%= d.price %> </td> 
+          <td><a href="deleteProductFromProduct?id=<%=d.id%>">Delete</a></td>
+        </tr>
+      <% }); %>  
+    </table>
+    <input type="submit" value="Edit">
+  </form>
+  <a href="/"><h3>Go home..</h3></a>
+</body>
+</html>

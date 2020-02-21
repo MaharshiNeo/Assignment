@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add to cart</title>
+  <script>
+    function check(){
+      let checkboxes = document.getElementsByName('product');      
+      for (c of checkboxes){
+        if(c.checked){          
+          return true;          
+        }
+      }
+      alert("Select at least one");
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <form action="addToCart" method="post" onsubmit="return check()">
+    <table border=1px style="border-collapse: collapse;">
+      <th></th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Enter quantity</th>
+      <% data.forEach(d => { %>
+        <tr>
+          <td><input type="checkbox" onclick="document.getElementById('quantity<%=d.id%>').disabled=!this.checked; document.getElementById('quantity<%=d.id%>').value = '1'" name="product" id="checkbox<%=d.id%>" value="<%=d.id%>"></td>          
+          <td><%= d.name %></td>
+          <td><%= d.price %></td>
+          <td><%= d.quantity %></td>
+          <td><input type="number" name="quantity" id="quantity<%=d.id%>" disabled min="1" max="<%= d.quantity%>"></td>
+        </tr>
+      <% }); %>         
+    </table>    
+    <input type="submit" value="Add to cart">
+  </form>
+  <a href="/"><h3>Go home..</h3></a>
+</body>
+</html>

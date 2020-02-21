@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show cart</title>
+  </head>
+  <body>
+    <table border=1px style="border-collapse: collapse;">    
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total</th>    
+      <% data.forEach(d => { %>
+        <tr>        
+          <td><%= d.name %></td>
+          <td><%= d.quantity %></td>
+          <td><%= d.price %></td>
+          <td><%= d.total %></td>
+        </tr>
+      <% }); %>         
+    </table> 
+  </body>
+  <a href="/"><h3>Go home..</h3></a>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit cart</title>
+</head>
+<body>
+  <form action="editCart" method="post">
+    <table border="1px" style="border-collapse: collapse;">       
+      <th></th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Delete</th>
+      <% data.forEach(d => { %>
+        <tr>
+          <td><input type="checkbox" onclick="document.getElementById('quantity<%=d.id%>').disabled=!this.checked;" name="product" id="checkbox<%=d.id%>" value="<%=d.id%>"></td>          
+          <td><%= d.name %></td>          
+          <td><input type="number" name="quantity<%=d.id%>" id="quantity<%=d.id%>" value="<%= d.cartQuantity %>" min="1" max="<%= d.productQuantity %>" disabled></td>
+          <td><a href="deleteProductFromCart?id=<%= d.id %>">Delete</a></td>
+        </tr>
+      <% }); %>       
+    </table>
+    <input type="submit" value="Edit cart">
+  </form>
+  <a href="/"><h3>Go home..</h3></a>
+</body>
+</html>

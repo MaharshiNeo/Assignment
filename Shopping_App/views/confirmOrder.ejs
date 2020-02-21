@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Order</title>
+</head>
+<body>
+  <h3>Order Summary</h3>
+  <table border=1px style="border-collapse: collapse;">    
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total</th>    
+    <% 
+    let netTotal = 0;
+    data.forEach(d => { %>
+      <tr>        
+        <td><%= d.name %></td>
+        <td><%= d.quantity %></td>
+        <td><%= d.price %></td>
+        <td><%= d.total %></td>
+      </tr>
+    <% 
+      netTotal = netTotal + d.total;  
+      }); 
+    %>
+  </table> 
+  <h3>Net total: </h3>
+  <%= netTotal %>
+  <a href="/"><h3>Go home..</h3></a>
+</body>
+</html>
