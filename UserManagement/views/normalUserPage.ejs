@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">      
+      <a href="logout"><button class="btn btn-danger" style="float: right;">Logout</button></a>      
+      <table class="table" style="text-align: center; margin-top: 10%;" border="1px">
+        <th>Field</th>
+        <th>Detail</th>
+        <tr>
+          <td>First Name</td>
+          <td><%= data[0].firstName %></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><%= data[0].lastName %></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><%= data[0].email %></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><%= data[0].address %></td>
+        </tr>
+        <tr>
+          <td>Phone No</td>
+          <td><%= data[0].phoneNo %></td>
+        </tr>
+      </table>    
+    </div>
+  </body>
+</html>
